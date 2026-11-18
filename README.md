@@ -3,9 +3,12 @@
 Sitio personal de **Victor Miranda Araya**, desarrollador front-end.
 Maquetación web responsive, landing pages y SEO técnico.
 
+Disponible en español (`/`) e inglés (`/en/`).
+
 ## Tecnologías
 
 - HTML5 semántico y accesible
+- Sitio bilingüe sin JavaScript, con `hreflang` para SEO internacional
 - SCSS (variables, mixins, partials con `@use`)
 - CSS Grid y Flexbox, enfoque mobile-first
 - Animaciones CSS y [AOS](https://michalsnik.github.io/aos/)
@@ -16,7 +19,8 @@ Maquetación web responsive, landing pages y SEO técnico.
 ## Estructura
 
 ```
-index.html
+index.html           # versión en español
+en/index.html        # versión en inglés
 scss/
   main.scss          # une todos los partials
   _variables.scss    # paleta, tipografía, espaciados, breakpoints
