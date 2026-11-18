@@ -1,0 +1,177 @@
+// =============================================
+// HERO: la primera pantalla. Grid de 1 columna en móvil
+// y 2 columnas (texto + tarjeta de código) en desktop.
+// =============================================
+@use 'variables' as v;
+@use 'mixins' as mx;
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: v.$space-xl v.$space-xxl;
+
+  // Luces de fondo decorativas (solo CSS, gradientes radiales)
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 32rem;
+    height: 32rem;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.18;
+    animation: float 14s ease-in-out infinite;
+  }
+
+  &::before {
+    top: -10rem;
+    left: -8rem;
+    background: radial-gradient(circle, v.$color-accent, transparent 70%);
+  }
+
+  &::after {
+    bottom: -12rem;
+    right: -10rem;
+    background: radial-gradient(circle, v.$color-accent-2, transparent 70%);
+    animation-delay: -7s;
+  }
+
+  &__inner {
+    @include mx.container;
+    display: grid;
+    gap: v.$space-lg;
+    align-items: center;
+
+    @include mx.respond(desktop) {
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: v.$space-xl;
+    }
+  }
+
+  // Animación de entrada escalonada (cada hijo llega un poco después)
+  &__content > * {
+    opacity: 0;
+    animation: fade-in-up 600ms ease-out forwards;
+  }
+
+  @for $i from 1 through 5 {
+    &__content > *:nth-child(#{$i}) {
+      animation-delay: #{$i * 100}ms;
+    }
+  }
+
+  &__eyebrow {
+    display: inline-block;
+    margin-bottom: v.$space-sm;
+    padding: 0.3rem 0.9rem;
+    border: 1px solid v.$color-border;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: v.$color-muted;
+
+    span {
+      color: v.$color-accent;
+    }
+  }
+
+  &__title {
+    font-size: clamp(2.75rem, 8vw, 4.5rem); // crece con la pantalla, con mínimo y máximo
+    margin-bottom: v.$space-xs;
+  }
+
+  &__role {
+    font-family: v.$font-heading;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    font-weight: 600;
+    margin-bottom: v.$space-sm;
+    background: linear-gradient(90deg, v.$color-accent, v.$color-accent-2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  &__specialties {
+    font-size: 0.95rem;
+    color: v.$color-muted;
+    margin-bottom: v.$space-md;
+  }
+
+  &__text {
+    max-width: 34rem;
+    margin-bottom: v.$space-lg;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: v.$space-sm;
+  }
+}
+
+// --- Tarjeta decorativa con código ---
+.code-card {
+  background-color: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  opacity: 0;
+  animation: fade-in-up 700ms ease-out 500ms forwards;
+  transition: transform 400ms ease-out;
+
+  // Efecto 3D leve, como vimos en transformaciones
+  @include mx.respond(desktop) {
+    transform: perspective(1000px) rotateY(-8deg);
+
+    &:hover {
+      transform: perspective(1000px) rotateY(0deg);
+    }
+  }
+
+  &__bar {
+    display: flex;
+    gap: 0.45rem;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid v.$color-border;
+
+    span {
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 50%;
+      background-color: v.$color-border;
+    }
+  }
+
+  pre {
+    padding: v.$space-md;
+    overflow-x: auto;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: v.$color-muted;
+  }
+
+  // Colores de "sintaxis"
+  .tag { color: v.$color-accent-2; }
+  .attr { color: v.$color-accent; }
+  .str { color: #fcd34d; }
+  .txt { color: v.$color-text; }
+}
+
+// --- Keyframes ---
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(3rem, 2rem); }
+}

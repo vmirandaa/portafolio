@@ -1,0 +1,26 @@
+// =============================================
+// MIXINS: "recetas" reutilizables.
+// =============================================
+@use 'sass:map';
+@use 'variables' as v;
+
+// Media query mobile-first.
+// Uso: @include mx.respond(desktop) { ... }
+@mixin respond($breakpoint) {
+  @media (min-width: map.get(v.$breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+// Contenedor centrado con margen lateral de 1rem en pantallas chicas.
+@mixin container {
+  width: min(100% - 2rem, v.$container-max);
+  margin-inline: auto;
+}
+
+// Bloque fijo (sin parámetros) -> se usa con @extend.
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

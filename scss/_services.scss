@@ -1,0 +1,81 @@
+// =============================================
+// SERVICIOS: grilla de tarjetas.
+// auto-fit + minmax: las tarjetas se acomodan solas
+// según el ancho (1, 2 o 3 columnas) sin media queries.
+// =============================================
+@use 'variables' as v;
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: v.$space-md;
+  margin-top: v.$space-lg;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-sm;
+  padding: v.$space-md;
+  background-color: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius;
+  transition:
+    transform v.$transition,
+    border-color v.$transition,
+    box-shadow v.$transition;
+
+  // La tarjeta "flota" al pasar el mouse
+  &:hover {
+    transform: translateY(-6px);
+    border-color: rgba(v.$color-accent, 0.5);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  }
+
+  &__icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0.6rem;
+    border-radius: 10px;
+    background-color: rgba(v.$color-accent, 0.1);
+    fill: none;
+    stroke: v.$color-accent;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+  }
+
+  &__text {
+    color: v.$color-muted;
+  }
+
+  &__list {
+    list-style: none;
+    margin-top: auto; // empuja la lista al fondo: tarjetas parejas
+    padding-top: v.$space-sm;
+    border-top: 1px solid v.$color-border;
+    font-size: 0.9rem;
+
+    li {
+      position: relative;
+      padding-left: 1.5rem;
+
+      & + li {
+        margin-top: 0.4rem;
+      }
+
+      // Check dibujado con CSS
+      &::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: v.$color-accent;
+        font-weight: 700;
+      }
+    }
+  }
+}

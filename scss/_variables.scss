@@ -1,0 +1,37 @@
+// =============================================
+// VARIABLES: todos los valores "de marca" en un solo lugar.
+// Si quieres cambiar el color de acento, lo cambias aquí y
+// se actualiza en todo el sitio.
+// =============================================
+
+// --- Paleta (tema oscuro) ---
+$color-bg: #0b0f17;        // fondo general
+$color-surface: #121a29;   // fondo de tarjetas y bloques
+$color-border: #1f2a3d;    // bordes sutiles
+$color-text: #e6e9ef;      // texto principal (contraste alto)
+$color-muted: #9aa6b8;     // texto secundario (sigue siendo legible)
+$color-accent: #5eead4;    // acento principal (turquesa)
+$color-accent-2: #818cf8;  // acento secundario (índigo), para gradientes
+
+// --- Tipografía (máximo 2 familias) ---
+$font-heading: 'Space Grotesk', system-ui, sans-serif;
+$font-body: 'Inter', system-ui, sans-serif;
+
+// --- Espaciados ---
+$space-xs: 0.5rem;
+$space-sm: 1rem;
+$space-md: 1.5rem;
+$space-lg: 2.5rem;
+$space-xl: 4rem;
+$space-xxl: 6rem;
+
+// --- Otros ---
+$container-max: 1120px;
+$radius: 12px;
+$transition: 250ms ease-out; // ease-out: lo natural para elementos que "llegan"
+
+// --- Breakpoints (mobile-first: se usan con min-width) ---
+$breakpoints: (
+  tablet: 768px,
+  desktop: 1024px,
+);

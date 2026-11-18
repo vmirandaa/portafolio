@@ -1,0 +1,60 @@
+// =============================================
+// SOBRE MÍ: texto + grupos de habilidades.
+// 1 columna en móvil, 2 columnas en desktop.
+// =============================================
+@use 'variables' as v;
+@use 'mixins' as mx;
+
+.about {
+  display: grid;
+  gap: v.$space-lg;
+
+  @include mx.respond(desktop) {
+    grid-template-columns: 1.2fr 1fr;
+    gap: v.$space-xl;
+    align-items: start;
+  }
+
+  &__text p {
+    color: v.$color-muted;
+    max-width: 38rem;
+
+    & + p {
+      margin-top: v.$space-sm;
+    }
+  }
+
+  &__skills {
+    display: grid;
+    gap: v.$space-md;
+  }
+}
+
+.skill-group {
+  &__title {
+    font-size: 1rem;
+    margin-bottom: v.$space-xs;
+  }
+
+  // Las habilidades como "chips"
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: v.$space-xs;
+    list-style: none;
+
+    li {
+      padding: 0.35rem 0.85rem;
+      font-size: 0.85rem;
+      background-color: v.$color-surface;
+      border: 1px solid v.$color-border;
+      border-radius: 999px;
+      transition: border-color v.$transition, color v.$transition;
+
+      &:hover {
+        border-color: v.$color-accent;
+        color: v.$color-accent;
+      }
+    }
+  }
+}

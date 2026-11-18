@@ -1,0 +1,35 @@
+// =============================================
+// FOOTER
+// =============================================
+@use 'variables' as v;
+@use 'mixins' as mx;
+
+.footer {
+  border-top: 1px solid v.$color-border;
+  padding-block: v.$space-lg;
+
+  &__inner {
+    @include mx.container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: v.$space-sm;
+    text-align: center;
+    font-size: 0.9rem;
+    color: v.$color-muted;
+
+    @include mx.respond(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__link {
+    transition: color v.$transition;
+
+    &:hover,
+    &:focus-visible {
+      color: v.$color-accent;
+    }
+  }
+}

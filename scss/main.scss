@@ -1,0 +1,13 @@
+// =============================================
+// ARCHIVO PRINCIPAL: solo importa los partials.
+// Compilar con:  sass --watch scss/main.scss css/styles.css
+// =============================================
+@use 'base';
+@use 'header';
+@use 'hero';
+@use 'sections';
+@use 'about';
+@use 'services';
+@use 'projects';
+@use 'contact';
+@use 'footer';

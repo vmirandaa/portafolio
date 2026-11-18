@@ -1,0 +1,126 @@
+// =============================================
+// BASE: reset, estilos generales y botones.
+// =============================================
+@use 'variables' as v;
+@use 'mixins' as mx;
+
+// --- Reset ---
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; // para que el header fijo no tape los títulos al usar anclas
+}
+
+body {
+  font-family: v.$font-body;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: v.$color-text;
+  background-color: v.$color-bg;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: v.$font-heading;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// Accesibilidad: foco visible para quien navega con teclado.
+// (Nunca outline: none sin reemplazo)
+:focus-visible {
+  outline: 2px solid v.$color-accent;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+// Contenedor reutilizable
+.container {
+  @include mx.container;
+}
+
+// Texto solo para lectores de pantalla
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+// --- Botones ---
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  transition:
+    transform v.$transition,
+    background-color v.$transition,
+    border-color v.$transition,
+    box-shadow v.$transition;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &--primary {
+    background-color: v.$color-accent;
+    color: v.$color-bg;
+
+    &:hover,
+    &:focus-visible {
+      box-shadow: 0 8px 24px rgba(v.$color-accent, 0.25);
+    }
+  }
+
+  &--outline {
+    border-color: v.$color-border;
+    color: v.$color-text;
+
+    &:hover,
+    &:focus-visible {
+      border-color: v.$color-accent;
+    }
+  }
+}
+
+// Respeta a quien desactivó las animaciones en su sistema.
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

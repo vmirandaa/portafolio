@@ -1,0 +1,55 @@
+// =============================================
+// HEADER: logo + navegación (sin JavaScript).
+// En móvil los enlaces bajan a una segunda fila.
+// =============================================
+@use 'variables' as v;
+@use 'mixins' as mx;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(v.$color-bg, 0.8);
+  backdrop-filter: blur(10px); // efecto vidrio esmerilado
+  border-bottom: 1px solid v.$color-border;
+
+  &__inner {
+    @include mx.container;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: v.$space-xs v.$space-md;
+    padding-block: v.$space-sm;
+  }
+
+  &__logo {
+    font-family: v.$font-heading;
+    font-weight: 700;
+    font-size: 1.25rem;
+
+    span {
+      color: v.$color-accent;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: v.$space-xs v.$space-md;
+    list-style: none;
+  }
+
+  &__link {
+    font-size: 0.9rem;
+    color: v.$color-muted;
+    transition: color v.$transition;
+
+    &:hover,
+    &:focus-visible {
+      color: v.$color-text;
+    }
+  }
+}

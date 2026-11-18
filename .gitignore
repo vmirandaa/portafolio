@@ -1,0 +1,13 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Dependencias
+node_modules/
+
+# Mapas de SCSS
+*.css.map
+
+# Configuración local del editor / herramientas
+.claude/
+.vscode/

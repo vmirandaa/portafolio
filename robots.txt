@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: actualizar la URL cuando el sitio esté publicado
+Sitemap: https://victormiranda.netlify.app/sitemap.xml

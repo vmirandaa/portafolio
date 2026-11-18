@@ -1,0 +1,52 @@
+// =============================================
+// PROYECTOS: grilla de tarjetas.
+// Por ahora con tarjetas "en desarrollo" (borde punteado).
+// =============================================
+@use 'variables' as v;
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: v.$space-md;
+  margin-top: v.$space-lg;
+
+  &__cta {
+    margin-top: v.$space-lg;
+  }
+}
+
+.project-card {
+  padding: v.$space-md;
+  background-color: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius;
+
+  // Variante "próximamente": punteada y sin relleno
+  &--soon {
+    background-color: transparent;
+    border-style: dashed;
+  }
+
+  &__tag {
+    display: inline-block;
+    margin-bottom: v.$space-sm;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: v.$color-accent-2;
+    background-color: rgba(v.$color-accent-2, 0.12);
+    border-radius: 999px;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  &__text {
+    font-size: 0.9rem;
+    color: v.$color-muted;
+  }
+}

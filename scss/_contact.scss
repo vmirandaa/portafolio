@@ -1,0 +1,134 @@
+// =============================================
+// CONTACTO: información + formulario.
+// 1 columna en móvil, 2 en desktop.
+// =============================================
+@use 'variables' as v;
+@use 'mixins' as mx;
+
+.contact {
+  display: grid;
+  gap: v.$space-lg;
+
+  @include mx.respond(desktop) {
+    grid-template-columns: 1fr 1.2fr;
+    gap: v.$space-xl;
+    align-items: start;
+  }
+
+  &__details {
+    list-style: none;
+    margin-top: v.$space-lg;
+    display: grid;
+    gap: v.$space-sm;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: v.$color-muted;
+    }
+
+    svg {
+      flex-shrink: 0; // el ícono nunca se deforma
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: none;
+      stroke: v.$color-accent;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    a {
+      transition: color v.$transition;
+
+      &:hover,
+      &:focus-visible {
+        color: v.$color-accent;
+      }
+    }
+  }
+}
+
+.contact-form {
+  display: grid;
+  gap: v.$space-md;
+  padding: v.$space-md;
+  background-color: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius;
+
+  @include mx.respond(tablet) {
+    padding: v.$space-lg;
+  }
+
+  // Nombre y correo lado a lado desde tablet
+  &__row {
+    display: grid;
+    gap: v.$space-md;
+
+    @include mx.respond(tablet) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__field {
+    display: grid;
+    gap: 0.4rem;
+
+    label {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font: inherit;
+      color: v.$color-text;
+      background-color: v.$color-bg;
+      border: 1px solid v.$color-border;
+      border-radius: 8px;
+      transition: border-color v.$transition, box-shadow v.$transition;
+
+      &::placeholder {
+        color: rgba(v.$color-muted, 0.7);
+      }
+
+      &:focus {
+        outline: none; // se reemplaza por borde + sombra visibles
+        border-color: v.$color-accent;
+        box-shadow: 0 0 0 3px rgba(v.$color-accent, 0.2);
+      }
+
+      // Solo marca error después de que el usuario interactuó
+      &:user-invalid {
+        border-color: #f87171;
+      }
+    }
+
+    select {
+      cursor: pointer;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 8rem;
+    }
+  }
+
+  &__submit {
+    justify-self: start;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  // Campo trampa anti-spam: fuera de la vista
+  &__trap {
+    position: absolute;
+    left: -9999px;
+  }
+}

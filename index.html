@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Victor Miranda Araya | Desarrollador Front-End</title>
+  <meta name="description" content="Victor Miranda Araya, desarrollador front-end. Maquetación web responsive desde diseño, landing pages y SEO técnico para sitios accesibles y bien posicionados." />
+  <meta name="author" content="Victor Miranda Araya" />
+  <!-- TODO: actualizar la URL cuando el sitio esté publicado en Netlify -->
+  <link rel="canonical" href="https://victormiranda.netlify.app/" />
+
+  <!-- Vista previa al compartir el enlace (LinkedIn, WhatsApp, etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Victor Miranda Araya | Desarrollador Front-End" />
+  <meta property="og:description" content="Maquetación web responsive, landing pages y SEO técnico." />
+  <meta property="og:url" content="https://victormiranda.netlify.app/" />
+  <meta property="og:locale" content="es_CL" />
+
+  <meta name="theme-color" content="#0b0f17" />
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+
+  <!-- Google Fonts: 2 familias (títulos y cuerpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+
+  <!-- Librerías primero, mis estilos después (para poder sobrescribirlas) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <a href="#inicio" class="header__logo" aria-label="Victor Miranda Araya, ir al inicio">VMA<span>.</span></a>
+      <nav aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a href="#sobre-mi" class="nav__link">Sobre mí</a></li>
+          <li><a href="#servicios" class="nav__link">Servicios</a></li>
+          <li><a href="#proyectos" class="nav__link">Proyectos</a></li>
+          <li><a href="#contacto" class="nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <p class="hero__eyebrow"><span>●</span> Disponible para proyectos remotos</p>
+          <h1 class="hero__title">Victor Miranda Araya</h1>
+          <p class="hero__role">Desarrollador Front-End</p>
+          <p class="hero__specialties">Maquetación web responsive · SEO técnico · Landing pages</p>
+          <div>
+            <p class="hero__text">Convierto diseños en sitios web responsive, accesibles y preparados para aparecer en Google, con código limpio y fácil de mantener.</p>
+            <div class="hero__actions">
+              <a href="#proyectos" class="btn btn--primary">Ver proyectos</a>
+              <a href="#contacto" class="btn btn--outline">Contactar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decorativa: aria-hidden para que los lectores de pantalla la ignoren -->
+        <div class="code-card" aria-hidden="true">
+          <div class="code-card__bar"><span></span><span></span><span></span></div>
+<pre><code><span class="tag">&lt;main&gt;</span>
+  <span class="tag">&lt;h1&gt;</span><span class="txt">Tu proyecto</span><span class="tag">&lt;/h1&gt;</span>
+  <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="str">"promesa"</span><span class="tag">&gt;</span>
+    <span class="txt">Responsive, accesible</span>
+    <span class="txt">y listo para Google.</span>
+  <span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/main&gt;</span></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOBRE MÍ ===== -->
+    <section class="section" id="sobre-mi">
+      <div class="section__inner about">
+        <div class="about__text">
+          <p class="section__label" data-aos="fade-up">01 · Sobre mí</p>
+          <h2 class="section__title" data-aos="fade-up">Código prolijo para sitios que funcionan</h2>
+          <div data-aos="fade-up" data-aos-delay="100">
+            <p>Soy desarrollador front-end en Chile y trabajo de forma remota. Me formé en desarrollo web en Coderhouse, donde construí sitios completos con HTML semántico, CSS moderno, SCSS y Bootstrap, publicados con Git, GitHub y Netlify.</p>
+            <p>Me enfoco en que cada sitio no solo se vea bien: que funcione en cualquier pantalla, sea accesible y esté preparado para que Google lo entienda desde el código.</p>
+            <p>Actualmente sigo ampliando mis conocimientos con JavaScript.</p>
+          </div>
+        </div>
+
+        <div class="about__skills" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-group">
+            <h3 class="skill-group__title">Maquetación</h3>
+            <ul class="skill-group__list">
+              <li>HTML5 semántico</li>
+              <li>CSS3</li>
+              <li>Flexbox</li>
+              <li>CSS Grid</li>
+              <li>Responsive / mobile-first</li>
+              <li>Animaciones CSS</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group__title">Herramientas</h3>
+            <ul class="skill-group__list">
+              <li>SCSS</li>
+              <li>Bootstrap 5</li>
+              <li>Git y GitHub</li>
+              <li>Netlify</li>
+              <li>DevTools</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group__title">SEO y accesibilidad</h3>
+            <ul class="skill-group__list">
+              <li>SEO on-page</li>
+              <li>SEO técnico</li>
+              <li>Optimización de imágenes</li>
+              <li>Accesibilidad</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICIOS ===== -->
+    <section class="section" id="servicios">
+      <div class="section__inner">
+        <p class="section__label" data-aos="fade-up">02 · Servicios</p>
+        <h2 class="section__title" data-aos="fade-up">En qué te puedo ayudar</h2>
+        <p class="section__lead" data-aos="fade-up" data-aos-delay="100">Trabajo con diseñadores, agencias y negocios digitales que necesitan un front-end sólido.</p>
+
+        <div class="services">
+          <article class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <svg class="service-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+            <h3 class="service-card__title">Maquetación desde diseño</h3>
+            <p class="service-card__text">Convierto tu diseño en HTML y CSS fiel al detalle, responsive y listo para producción.</p>
+            <ul class="service-card__list">
+              <li>Fidelidad al diseño original</li>
+              <li>Mobile-first en todas las pantallas</li>
+              <li>Código ordenado con SCSS</li>
+            </ul>
+          </article>
+
+          <article class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <svg class="service-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 20h16M6 16l4-4 3 3 5-7" />
+              <path d="M14 8h4v4" />
+            </svg>
+            <h3 class="service-card__title">Landing pages</h3>
+            <p class="service-card__text">Páginas de venta y lanzamiento pensadas para convertir visitas en clientes.</p>
+            <ul class="service-card__list">
+              <li>Estructura enfocada en la acción</li>
+              <li>Animaciones sutiles y modernas</li>
+              <li>Formulario de contacto incluido</li>
+            </ul>
+          </article>
+
+          <article class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <svg class="service-card__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="M21 21l-4.5-4.5" />
+            </svg>
+            <h3 class="service-card__title">Auditoría SEO</h3>
+            <p class="service-card__text">Reviso tu sitio actual, te entrego un informe claro y corrijo lo que frena su posicionamiento en Google.</p>
+            <ul class="service-card__list">
+              <li>Meta etiquetas y estructura HTML</li>
+              <li>Encabezados, palabras clave y textos alt</li>
+              <li>Sitemap, robots.txt y redirecciones</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROYECTOS ===== -->
+    <section class="section" id="proyectos">
+      <div class="section__inner">
+        <p class="section__label" data-aos="fade-up">03 · Proyectos</p>
+        <h2 class="section__title" data-aos="fade-up">Trabajo reciente</h2>
+        <p class="section__lead" data-aos="fade-up" data-aos-delay="100">Estoy preparando nuevos casos de estudio. Mientras tanto, puedes revisar mi código en GitHub.</p>
+
+        <div class="projects">
+          <article class="project-card project-card--soon" data-aos="fade-up" data-aos-delay="100">
+            <p class="project-card__tag">En desarrollo</p>
+            <h3 class="project-card__title">Landing page para producto digital</h3>
+            <p class="project-card__text">Bootstrap 5 · SCSS · Animaciones</p>
+          </article>
+          <article class="project-card project-card--soon" data-aos="fade-up" data-aos-delay="200">
+            <p class="project-card__tag">En desarrollo</p>
+            <h3 class="project-card__title">Maquetación fiel desde diseño</h3>
+            <p class="project-card__text">HTML semántico · CSS Grid · Responsive</p>
+          </article>
+        </div>
+
+        <a href="https://github.com/vmirandaa" class="btn btn--outline projects__cta" target="_blank" rel="noopener noreferrer" data-aos="fade-up">Ver mi GitHub</a>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section class="section" id="contacto">
+      <div class="section__inner contact">
+        <div class="contact__info">
+          <p class="section__label" data-aos="fade-up">04 · Contacto</p>
+          <h2 class="section__title" data-aos="fade-up">¿Tienes un proyecto en mente?</h2>
+          <p class="section__lead" data-aos="fade-up" data-aos-delay="100">Cuéntame qué necesitas y te respondo con una propuesta. Sin compromiso.</p>
+
+          <ul class="contact__details" data-aos="fade-up" data-aos-delay="200">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" /></svg>
+              <span>Trabajo remoto con clientes de cualquier país</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg>
+              <span>Desde Chile</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2.5m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" /></svg>
+              <a href="https://github.com/vmirandaa" target="_blank" rel="noopener noreferrer">github.com/vmirandaa</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Formulario con Formspree: funciona sin JavaScript. -->
+        <form class="contact-form" action="https://formspree.io/f/mbgoowod" method="post" data-aos="fade-up" data-aos-delay="200">
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde el portafolio" />
+          <!-- Trampa anti-spam: invisible para personas, los bots la rellenan -->
+          <input type="text" name="_gotcha" class="contact-form__trap" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <div class="contact-form__row">
+            <div class="contact-form__field">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Tu nombre" required />
+            </div>
+            <div class="contact-form__field">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="tu@correo.com" required />
+            </div>
+          </div>
+
+          <div class="contact-form__field">
+            <label for="servicio">¿Qué necesitas?</label>
+            <select id="servicio" name="servicio" required>
+              <option value="" disabled selected>Elige una opción</option>
+              <option>Maquetación desde diseño</option>
+              <option>Landing page</option>
+              <option>Auditoría SEO</option>
+              <option>Otro</option>
+            </select>
+          </div>
+
+          <div class="contact-form__field">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntame sobre tu proyecto, plazos y cualquier detalle útil." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary contact-form__submit">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <p>&copy; 2026 Victor Miranda Araya</p>
+      <a href="https://github.com/vmirandaa" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 600, easing: 'ease-out' });
+  </script>
+</body>
+</html>

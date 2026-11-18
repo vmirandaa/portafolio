@@ -1,0 +1,35 @@
+// =============================================
+// SECCIONES: estilos compartidos por todas las secciones.
+// (Cada sección tendrá su propio partial cuando la construyamos)
+// =============================================
+@use 'variables' as v;
+@use 'mixins' as mx;
+
+.section {
+  padding-block: v.$space-xl;
+  border-top: 1px solid v.$color-border;
+
+  &__inner {
+    @include mx.container;
+  }
+
+  // Etiqueta pequeña sobre el título ("01 · Sobre mí")
+  &__label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: v.$color-accent;
+    margin-bottom: v.$space-xs;
+  }
+
+  &__title {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    margin-bottom: v.$space-sm;
+  }
+
+  &__lead {
+    color: v.$color-muted;
+    max-width: 40rem;
+  }
+}
