@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: actualizar la URL cuando el sitio esté publicado -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://victormiranda.netlify.app/</loc>
+    <loc>https://vma-dev.netlify.app/</loc>
     <lastmod>2026-11-18</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://victormiranda.netlify.app/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://victormiranda.netlify.app/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://vma-dev.netlify.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://vma-dev.netlify.app/en/" />
   </url>
   <url>
-    <loc>https://victormiranda.netlify.app/en/</loc>
+    <loc>https://vma-dev.netlify.app/en/</loc>
     <lastmod>2026-11-18</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://victormiranda.netlify.app/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://victormiranda.netlify.app/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://vma-dev.netlify.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://vma-dev.netlify.app/en/" />
   </url>
 </urlset>
